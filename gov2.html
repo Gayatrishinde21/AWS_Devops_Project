@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>National Government Portal | Official Website</title>
+    <style>
+        /* Base styles */
+        :root {
+            --primary-color: #003366;
+            --secondary-color: #0056b3;
+            --accent-color: #ffcc00;
+            --text-color: #333333;
+            --light-bg: #f5f5f5;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--secondary-color);
+        }
+        
+        /* Header styles */
+        header {
+            background-color: var(--white);
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            height: 60px;
+            margin-right: 1rem;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--primary-color);
+        }
+        
+        .navbar {
+            display: flex;
+            list-style: none;
+        }
+        
+        .navbar li {
+            position: relative;
+        }
+        
+        .navbar a {
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        
+        .navbar a:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        /* Dropdown */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: var(--white);
+            min-width: 250px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 1;
+        }
+        
+        .dropdown-content a {
+            color: var(--text-color);
+            padding: 12px 16px;
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        
+        /* Hero section */
+        .hero {
+            position: relative;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            background-color: rgba(0, 51, 102, 0.8);
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+        
+        /* Quick links */
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .quick-link-card {
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            padding: 1.5rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .quick-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .quick-link-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* News section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .news-card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .news-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 1rem;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .news-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .footer-section ul {
+            list-style: none;
+        }
+        
+        .footer-section a {
+            color: var(--white);
+            display: block;
+            padding: 0.3rem 0;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo-container {
+                margin-bottom: 1rem;
+            }
+            
+            .navbar {
+                flex-direction: column;
+            }
+            
+            .dropdown-content {
+                position: static;
+            }
+            
+            .hero {
+                height: 300px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3957c7e4-eb7d-48dd-acfd-617b3dbdc949.png" alt="Official government seal with national emblem in gold and blue colors" class="logo-img">
+            <span class="logo-text">National Government Portal</span>
+        </div>
+        <div class="search-container">
+            <input type="text" placeholder="Search government services...">
+            <button>Search</button>
+        </div>
+    </header>
+    
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Government</a>
+                <div class="dropdown-content">
+                    <a href="#">President & Cabinet</a>
+                    <a href="#">Parliament</a>
+                    <a href="#">Ministries</a>
+                    <a href="#">Departments</a>
+                    <a href="#">Agencies</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="#">Services</a>
+                <div class="dropdown-content">
+                    <a href="#">Passports</a>
+                    <a href="#">Taxes</a>
+                    <a href="#">Licenses</a>
+                    <a href="#">Social Services</a>
+                    <a href="#">Business Registration</a>
+                </div>
+            </li>
+            <li><a href="#">Laws & Regulations</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    
+    <section class="hero">
+        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/42e60f28-715c-4e9b-9273-db2889d78a61.png" alt="Modern government building with columns and national flag flying, symbolic of democracy" class="hero-bg">
+        <div class="hero-content">
+            <h1>Government Services at Your Fingertips</h1>
+            <p>Find all official government services, documents, and information in one place.</p>
+            <button style="margin-top: 1rem; padding: 0.5rem 1rem; background-color: var(--accent-color); border: none; border-radius: 4px; font-weight: bold;">Popular Services</button>
+        </div>
+    </section>
+    
+    <div class="container">
+        <h2 class="section-title">Quick Access to Services</h2>
+        <div class="quick-links">
+            <div class="quick-link-card">
+                <h3>Register a Business</h3>
+                <p>Start your business registration process online with our simplified forms.</p>
+                <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Start Now</a>
+            </div>
+            <div class="quick-link-card">
+                <h3>Pay Taxes</h3>
+                <p>File and pay your taxes electronically through our secure portal.</p>
+                <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Pay Now</a>
+            </div>
+            <div class="quick-link-card">
+                <h3>Apply for Passport</h3>
+                <p>Renew or apply for a new passport using our online application system.</p>
+                <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Apply Now</a>
+            </div>
+            <div class="quick-link-card">
+                <h3>Voter Registration</h3>
+                <p>Register to vote or update your voter registration information.</p>
+                <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Register Now</a>
+            </div>
+        </div>
+        
+        <h2 class="section-title">Latest News & Announcements</h2>
+        <div class="news-grid">
+            <div class="news-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f7402912-1973-43fe-85a7-5cb0eb0e47fc.png" alt="Government officials meeting around a table for budget discussion in modern conference room" class="news-img">
+                <div class="news-content">
+                    <p class="news-date">June 15, 2023</p>
+                    <h3 class="news-title">National Budget Approved for Fiscal Year</h3>
+                    <p>Parliament has approved the national budget with increased funding for education and healthcare.</p>
+                    <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Read More</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a70ae876-0d4c-47e7-bfd7-c16794013595.png" alt="Group of diverse citizens celebrating at community center opening ceremony" class="news-img">
+                <div class="news-content">
+                    <p class="news-date">June 10, 2023</p>
+                    <h3 class="news-title">New Community Centers Open Nationwide</h3>
+                    <p>Twenty new community centers have opened across the country to provide services to local residents.</p>
+                    <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Read More</a>
+                </div>
+            </div>
+            <div class="news-card">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/85dce4f5-866c-423d-87fa-e83026f37c07.png" alt="Government official signing trade agreement with international delegates in formal ceremony" class="news-img">
+                <div class="news-content">
+                    <p class="news-date">June 5, 2023</p>
+                    <h3 class="news-title">New International Trade Agreement Signed</h3>
+                    <p>Government signs new agreement to expand trade opportunities with partner nations.</p>
+                    <a href="#" style="display: inline-block; margin-top: 0.5rem; color: var(--secondary-color); font-weight: bold;">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Government</h3>
+                <ul>
+                    <li><a href="#">Executive Branch</a></li>
+                    <li><a href="#">Legislative Branch</a></li>
+                    <li><a href="#">Judicial Branch</a></li>
+                    <li><a href="#">State & Local</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">All Services (A-Z)</a></li>
+                    <li><a href="#">Forms</a></li>
+                    <li><a href="#">Grants</a></li>
+                    <li><a href="#">Benefits</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>About</h3>
+                <ul>
+                    <li><a href="#">Mission</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Open Government</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="#">Directory</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Accessibility</a></li>
+                    <li><a href="#">Emergency Contacts</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© National Government Portal. All rights reserved. | <a href="#" style="color: var(--accent-color);">Privacy Policy</a> | <a href="#" style="color: var(--accent-color);">Terms of Service</a> | <a href="#" style="color: var(--accent-color);">Accessibility</a></p>
+        </div>
+    </footer>
+</body>
+</html>
+

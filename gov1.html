@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Government of Bharat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #002147;
+      color: white;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    header img {
+      height: 60px;
+    }
+
+    header h1 {
+      font-size: 24px;
+      margin: 0;
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    nav {
+      background-color: #004080;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      background-color: #0066cc;
+    }
+
+    .hero {
+      background: url('https://via.placeholder.com/1200x400?text=Digital+India+Initiative') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px;
+      color: #004080; /* Blue text */
+      text-align: center;
+      background-color: #e6f0ff; /* Light blue background for contrast */
+    }
+
+    .section {
+      padding: 40px 20px;
+      background: white;
+      margin: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004080;
+    }
+
+    .services, .news {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background-color: #002147;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Emblem_of_India.svg/100px-Emblem_of_India.svg.png" alt="Government Emblem">
+  <h1>Government of Bharat</h1>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Services</a>
+  <a href="#">Departments</a>
+  <a href="#">Contact</a>
+</nav>
+
+<div class="hero">
+  <h2>Welcome to the Official Government Portal</h2>
+  <p>Empowering Citizens through Digital Governance</p>
+</div>
+
+<section class="section">
+  <h2>Our Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Aadhar Services</h3>
+      <p>Apply, Update or Download your Aadhar card.</p>
+    </div>
+    <div class="card">
+      <h3>Passport Services</h3>
+      <p>Book appointments, apply for new or renew passports.</p>
+    </div>
+    <div class="card">
+      <h3>Income Tax Filing</h3>
+      <p>File your IT returns online safely and easily.</p>
+    </div>
+    <div class="card">
+      <h3>Employment Schemes</h3>
+      <p>Explore job schemes and youth employment programs.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Latest Updates</h2>
+  <div class="news">
+    <div class="card">
+      <h3>New Digital India Policy</h3>
+      <p>Government launches updated policy for citizen services.</p>
+    </div>
+    <div class="card">
+      <h3>Scholarship Portal Opens</h3>
+      <p>Apply for 2025–26 education scholarships now.</p>
+    </div>
+    <div class="card">
+      <h3>COVID-19 Guidelines</h3>
+      <p>Latest travel and health updates for all citizens.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Government of Bharat | Contact: support@gov.in | Toll-free: 1800-123-4567</p>
+</footer>
+
+</body>
+</html>
